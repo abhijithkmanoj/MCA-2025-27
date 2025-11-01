@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA College Admission</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        fieldset {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        legend {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            padding: 0 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }// Corrected: The main function now has the correct structure for a menu-driven program.
+
+
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .hobby-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .submit-button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 24px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .office-use-table {
+            width: 100%;
+        }
+
+        .office-use-table td {
+            padding: 10px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+                padding: 15px;
+            }
+
+            fieldset {
+                padding: 20px;
+            }
+
+            legend {
+                font-size: 24px;
+            }
+
+            .submit-button {
+                font-size: 20px;
+                padding: 12px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ADMISSION DETAILS</h1>
+
+        <form>
+            <fieldset>
+                <legend>Personal Details</legend>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male" required> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label>Hobbies</label>
+                    <div class="hobby-list checkbox-group">
+                        <label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+                        <label><input type="checkbox" name="hobby" value="Music"> Music</label>
+                        <label><input type="checkbox" name="hobby" value="Dance"> Dance</label>
+                        <label><input type="checkbox" name="hobby" value="Traveling"> Travelling</label>
+                        <label><input type="checkbox" name="hobby" value="Arts"> Arts</label>
+                        <label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
+                        <label><input type="checkbox" name="hobby" value="Others"> Others</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="guardian">Guardian</label>
+                    <input type="text" id="guardian" name="guardian">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., 9876543210" pattern="[0-9]{10}" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Course Details</legend>
+                <div class="form-group">
+                    <label>Select a Course:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="course" value="BCA" required> BCA</label>
+                        <label><input type="radio" name="course" value="BSc CS"> BSC CS</label>
+                        <label><input type="radio" name="course" value="BSc Physics"> BSC PHYSICS</label>
+                        <label><input type="radio" name="course" value="BSc Maths"> BSC MATHS</label>
+                        <label><input type="radio" name="course" value="Others"> OTHERS</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Office Use Only</legend>
+                <table class="office-use-table">
+                    <tr>
+                        <td>Admission Number:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Signature:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <div class="btn-container">
+                <button type="submit" class="submit-button">Submit Application</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

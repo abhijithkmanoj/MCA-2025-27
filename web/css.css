@@ -1,0 +1,47 @@
+h2{
+    background-color: #b700ff;
+    color: rgb(96, 248, 253);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size:200%;
+
+}
+h3{
+    background-color: #ff9c08;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size:150%;
+
+}
+p1:hover{
+    background-color: #2600ff;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size:180%;
+}
+p1{
+    background-color: #a9ff08;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size:150%;
+}
+h4{
+    background-color: #2600ff;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size:180%;
+}

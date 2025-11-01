@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitchen</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 1.2em;
+            min-height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cooking and Cleaning</h2>
+    <button onclick="startProcess()">Cook</button>
+    <div id="output"></div>
+
+    <script>
+        function log(message) {
+            console.log(message);
+        }
+
+        function cook() {
+            const output = document.getElementById('output');
+            output.innerHTML += "Someone is Cooking ....<br>";
+            setTimeout(() => {
+                output.innerHTML += "Somebody got cooked !<br>";
+            }, 4000);
+        }
+
+        function clean() {
+            const output = document.getElementById('output');
+            output.innerHTML += "Cleaning started....<br>";
+        }
+
+        function startProcess() {
+            const output = document.getElementById('output');
+            output.innerHTML = '';  // Clear previous output
+            cook();
+            clean();
+        }
+    </script>
+</body>
+</html>
+
+
+Backend

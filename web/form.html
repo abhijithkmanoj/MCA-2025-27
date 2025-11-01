@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>MA College</title>
+        <style>
+            body{
+                background-color:rgb(111, 143, 212);
+                padding:0 200 0;
+                font-size: 27px;
+            }
+            fieldset{
+                background-color:rgb(243, 231, 160);
+                size:20px;
+                padding:0 20 0 20;
+            }
+            legend{
+                color:rgb(0, 0, 0);
+                font-size: 37px;
+                text-align:center;
+            }
+            h1{
+                background-color:rgb(255, 242, 62)
+            }
+            button{
+                background-color:rgb(84, 84, 255);
+                font-size: 37px;
+            }
+        </style>
+    </head>
+    <h1 align="center">ADMISSION DETAILS</h1>
+    <!--PERSONAL DETAILS-->
+    <body>
+    
+    <fieldset>
+        <legend><b>Personal Details</b></legend>
+        <table align="center"border="3px">
+            <tr>
+                <td><label>Name</label>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Gender</label>
+                    <input type="radio" name="gender" value="male">Male</input>
+                    <input type="radio" name="gender" value="female">Female</input>
+                    <input type="radio" name="gender" value="other">Other</input>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address</label>
+                <textarea rows="3" cols="25" type="text"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date of birth</label>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Hobbies</label>
+                </td>
+                <td class="checkbox-group">
+                    <input type="checkbox" name="hobby" value="Reading">Reading
+                    <input type="checkbox" name="hobby" value="Music">Music
+                    <input type="checkbox" name="hobby" value="Dance">Dance
+                    <input type="checkbox" name="hobby" value="Traveling">Travelling
+                    <input type="checkbox" name="hobby" value="Arts">Arts
+                    <input type="checkbox" name="hobby" value="Sports">Sports
+                    <input type="checkbox" name="hobby" value="Others">Others
+                </td>
+            </tr>
+            <tr>
+                <td><label>Guardian</label>
+                    <input type="text" name="guardian">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Phone</label>
+                    <input type="tel" name="phone">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <br>
+    <!--COURSE DETAILS-->
+   
+    <fieldset>
+        <legend><b>Course Details</b></legend>
+        <h4>Select course:</h4>
+        <input type="radio" name="course"value="BCA">BCA</input>
+        <input type="radio" name="course"value="Bsc cs">BSC CS</input>
+        <input type="radio" name="course"value="Bsc Physics">BSC PHYSICS</input>
+        <input type="radio" name="course"value="Bsc Maths">BSC MATHS</input>
+        <input type="radio" name="course"value="Others">OTHERS</input>
+    </fieldset>
+    <br>
+    <!--OFFICE USE-->
+    
+    <fieldset>
+        <legend><b>Office use only</b></legend>
+        <div class="office-use">
+            <table>
+                <tr>
+                    <td>
+                        Admission number:
+                    </td>
+                    <td>            </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:
+                    </td>
+                    <td>            </td>
+                </tr>
+                <tr>
+                    <td>
+                        Signature:
+                    </td>
+                    <td>            </td>
+                </tr>
+       
+            </table>
+        </div>
+    </fieldset>
+    <div class="btn">
+        <button type="Submit">Submit</button>
+    </div>
+    </body>
+</html>

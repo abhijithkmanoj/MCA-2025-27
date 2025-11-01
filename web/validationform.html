@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Validation</title>
+        <style>
+            body{
+                background-color: rgba(216, 255, 108, 0.891);
+                padding: 0 200px;
+                font-size: 27px;
+            }
+            fieldset{
+                background-color: rgba(213, 254, 101, 0.891);
+                size: 20px;
+                padding: 0 20px;
+            }
+            label{
+                color: rgb(0, 0, 0);
+                font-size: 37px;
+                text-align: center;
+            }
+            h1{
+                background-color: rgba(205, 250, 82, 0.891);
+                text-align: center;
+                padding: 20px;
+            }
+            button{
+                background-color: rgba(216, 255, 108, 0.891);
+                font-size: 37px;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                display: block;
+                margin: 20px auto;
+            }
+            .error{
+                color: red;
+                font-size: 20px;
+                margin-top: 5px;
+            }
+            .success{
+                color: green;
+                font-size: 20px;
+            }
+            .placeholder{
+                color: rgb(0, 0, 0);
+                font-size: 37px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Form Validation</h1>
+        <form id="form">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter name"><br><br>
+            <div id="name-error" class="error"></div>
+
+            <label for="phn">Phone number:</label>
+            <input type="tel" name="phn" id="phn" placeholder="10 digits only"><br><br>
+            <div id="phn-error" class="error"></div>
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="username@example.com"><br><br>
+            <div id="email-error" class="error"></div>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Must contain more than 6 characters"><br><br>
+            <div id="password-error" class="error"></div>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Re-enter your password"><br><br>
+            <div id="confirm-password-error" class="error"></div>
+
+            <div class="btn-container">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+
+        <script>
+            document.getElementById('form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+                let isValid = true;
+
+                // Clear all error messages
+                document.querySelectorAll('.error').forEach(function(errorElement) {
+                    errorElement.textContent = '';
+                });
+
+                // Validate Name
+                const name = document.getElementById('name').value;
+                if (name.trim() === '') {
+                    isValid = false;
+                    document.getElementById('name-error').textContent = 'Name is required.';
+                }
+
+                // Validate Phone Number
+                const phone = document.getElementById('phn').value;
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phone.match(phoneRegex)) {
+                    isValid = false;
+                    document.getElementById('phn-error').textContent = 'Phone number must be 10 digits.';
+                }
+
+                // Validate Email
+                const email = document.getElementById('email').value;
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!email.match(emailRegex)) {
+                    isValid = false;
+                    document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                }
+
+                // Validate Password
+                const password = document.getElementById('password').value;
+                if (password.length <= 6) {
+                    isValid = false;
+                    document.getElementById('password-error').textContent = 'Password must be more than 6 characters.';
+                }
+
+                // Validate Confirm Password
+                const confirmPassword = document.getElementById('confirm-password').value;
+                if (password !== confirmPassword) {
+                    isValid = false;
+                    document.getElementById('confirm-password-error').textContent = 'Passwords do not match.';
+                }
+
+                // If the form is valid, display a success message (for now)
+                if (isValid) {
+                    alert('Form submitted successfully!');
+                    document.getElementById('form').reset();
+                }
+            });
+        </script>
+    </body>
+</html>

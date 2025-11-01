@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Odd or Even</title>
+    </head>
+    <style>
+        
+    </style>
+    <body>
+        <div class="container">
+            <h2 align="center">Odd or Even</h2>
+            <label align="center">Enter the number:</label>
+            <input align="center" name="number" id="num">
+            <button align="center" onclick="evenorodd()">Check</button>
+            <p id="result"></p>
+        </div>
+    </body>
+    <script>
+        function evenorodd(){
+            let num = document.getElementById("num").value;
+            let result = document.getElementById("result");
+
+            num = parseInt(num); // Convert input value to a number
+            
+            if (isNaN(num)) {
+                result.innerHTML = "Invalid input. Please enter a number.";
+            } else if (num === 0) {
+                result.innerHTML = "The number is 0";
+            } else if (num % 2 === 0) {
+                result.innerHTML = num + " is even.";
+            } else {
+                result.innerHTML = num + " is odd.";
+            }
+        }
+    </script>
+</html>
