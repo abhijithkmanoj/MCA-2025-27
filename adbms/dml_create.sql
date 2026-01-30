@@ -1,0 +1,17 @@
+CREATE TABLE PRODUCT(
+    PID INT PRIMARY KEY,
+    NAME VARCHAR(20),
+    CATEGORY VARCHAR(20),
+    MFD DATE,
+    QTY NUMBER(7,3),
+    PRICE NUMBER(7,3)
+);
+
+CREATE TABLE Sailors (
+    Sid INT PRIMARY KEY,
+    Sname VARCHAR(30),
+    Rating INT,
+    Age INT
+);
+
+
