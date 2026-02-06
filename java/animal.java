@@ -88,6 +88,7 @@ class Cat extends Animal {
     void display() {
         getDetails();
     }
+
 }
 
 class animal {
