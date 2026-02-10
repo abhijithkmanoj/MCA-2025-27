@@ -57,3 +57,44 @@ SELECT PRODUCTID,
 FROM PRODUCTS
 NATURAL JOIN CATEGORIES
 WHERE PRICE = (SELECT MAX(PRICE) FROM PRODUCTS);
+
+
+
+--another qn
+
+SELECT s.sname, s.age
+FROM sailors s
+INNER JOIN (
+    SELECT MIN(age) AS min_age
+    FROM sailors
+) m
+ON s.age = m.min_age;
+
+SELECT s.sname
+FROM sailors NATURAL JOIN reserves r
+WHERE NOT EXISTS (
+    (SELECT bid FROM boats)
+    MINUS
+    (SELECT bid FROM reserves WHERE sid = s.sid)
+);
+
+SELECT DISTINCT s.sid
+FROM sailors s
+LEFT JOIN reserves r ON s.sid = r.sid
+LEFT JOIN boats b ON r.bid = b.bid
+WHERE b.color = 'red' OR b.color = 'green';
+
+SELECT s.sname
+FROM sailors s
+RIGHT JOIN reserves r ON s.sid = r.sid
+WHERE r.bid = 102;
+
+SELECT s.sname
+FROM sailors s
+FULL OUTER JOIN reserves r ON s.sid = r.sid
+WHERE NOT EXISTS (
+    (SELECT bid FROM boats)
+    MINUS
+    (SELECT bid FROM reserves WHERE sid = s.sid)
+);
+
