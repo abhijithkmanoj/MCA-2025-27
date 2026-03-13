@@ -1,0 +1,14 @@
+mongosh
+use Company
+db.createCollection("Employee")
+
+db.Employee.insertMany([
+{EmpId:101,EmpName:"Arun",DOB:"1998-05-10",Salary:35000,Designation:"Developer"},
+{EmpId:102,EmpName:"Anjali",DOB:"1997-11-21",Salary:42000,Designation:"Database Administrator"},
+{EmpId:103,EmpName:"Rahul",DOB:"1999-02-14",Salary:30000,Designation:"System Analyst"}
+])
+
+db.Employee.find()
+db.Employee.find().pretty()
+db.Employee.find({EmpId:102})
+db.Employee.find({EmpId:102}).pretty()
